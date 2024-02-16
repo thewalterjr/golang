@@ -1,11 +1,10 @@
 func maxProfit(prices []int) int {
-    l,r := 0, 1 //left=buy righ=sell
+    buy,sell := 0, 1
     maxP := 0
 
     for r < len(prices) {
-        //profitable?
-        if prices[l] < prices[r] {
-            profit := prices[r] - prices[l]
+        if prices[buy] < prices[sell] {
+            profit := prices[sell] - prices[buy]
             maxP = max(maxP, profit)
         } else {
             l = r    
@@ -14,3 +13,5 @@ func maxProfit(prices []int) int {
     }
     return maxP
 }
+
+// Usando TWO POINTERS
