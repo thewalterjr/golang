@@ -1,5 +1,5 @@
 func maxProfit(prices []int) int {
-    buy,sell := 0, 1
+    buy,sell := 0, 1 
     maxP := 0
 
     for r < len(prices) {
@@ -7,9 +7,9 @@ func maxProfit(prices []int) int {
             profit := prices[sell] - prices[buy]
             maxP = max(maxP, profit)
         } else {
-            l = r    
+            buy = sell    
         }
-        r += 1
+        sell += 1
     }
     return maxP
 }
